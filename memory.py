@@ -15,7 +15,7 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+tiles = ["😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🥸","😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "🥲"] * 2
 state = {'mark': None}
 hide = [True] * 64
 numTaps = 0
@@ -61,8 +61,6 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-    
-
 
 
 def draw():
@@ -91,6 +89,12 @@ def draw():
     write(f"Taps: {numTaps}",False,font=("Arial" ,12,"normal"))
     update()
     ontimer(draw, 100)
+
+    """Mostrar que el juego ya acabó"""
+    if all(h == False for h in hide):
+        goto(-100, 0)
+        color('green')
+        write('¡Juego terminado!', font=('Arial', 20, 'bold'))
 
 
 shuffle(tiles)
