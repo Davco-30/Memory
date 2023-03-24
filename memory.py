@@ -6,6 +6,7 @@ Cambios:
 4. Como un condimento de innovación al juego. Podrías utilizar algo diferente a los dígitos para resolver el juego y que al usuario le ayude a tener mejor memoria ?
 
 Editado por:
+David Alonso Chang Ortega 
 Emmanuel Cruz Durán A01658410 - Modificación Realizada "Centrar los dígitos en los cuadros"
 """
 
@@ -79,7 +80,7 @@ def draw():
 
     mark = state['mark']
 
-    if mark is not None:
+    if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
         goto(x+26, y)
