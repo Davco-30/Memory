@@ -7,6 +7,8 @@ Exercises:
 3. Detect when all tiles are revealed.
 4. Center single-digit tile.
 5. Use letters instead of tiles.
+
+Emmanuel Cruz Durán A01658410 - Modificación Realizada "Centrar los dígitos en los cuadros"
 """
 
 from random import *
@@ -73,9 +75,9 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
-        color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        goto(x+26, y)
+        color('grey')
+        write(tiles[mark],align="center",font=('Arial', 30, 'normal'))
 
     update()
     ontimer(draw, 100)
